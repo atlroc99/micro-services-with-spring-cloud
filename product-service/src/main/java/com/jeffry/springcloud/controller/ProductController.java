@@ -36,4 +36,9 @@ public class ProductController {
     public List<Product> getProducts() {
         return productService.getProducts();
     }
+
+        @GetMapping("/testCoupon")
+    public String testCouponService() {
+        return productService.testCouponService();
+    }
 }
