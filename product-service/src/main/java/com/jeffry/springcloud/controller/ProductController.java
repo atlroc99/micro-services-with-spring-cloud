@@ -11,8 +11,16 @@ import java.util.List;
 @RequestMapping("/productapi")
 public class ProductController {
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping("")
+    private String test() {
+        return "PRODUCT-SERVICE: Up and running...";
+    }
 
     @GetMapping("/products/{id}")
      public Product getProduct(@PathVariable(value = "id") Long id) {

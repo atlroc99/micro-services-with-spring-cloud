@@ -11,8 +11,16 @@ import java.util.List;
 @RequestMapping("/couponapi")
 public class CouponController {
 
-    @Autowired
-    private CouponService couponService;
+    private final CouponService couponService;
+
+    public CouponController(CouponService couponService) {
+        this.couponService = couponService;
+    }
+
+    @GetMapping()
+    public String test() {
+        return "COUPON-SERVICE: UP AND RUNNING...";
+    }
 
     @PostMapping("/coupons")
     public Coupon createCoupon(@RequestBody(required = true) Coupon coupon) {
