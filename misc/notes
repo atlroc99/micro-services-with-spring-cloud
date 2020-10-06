@@ -1,0 +1,41 @@
+
+Ribbon:
+    Using spring cloud ribbon to load balance on the client side.
+    Ribbon and Feign will work together along with Eureka to balance the load on the client side
+    Ribbon internally knows how to connect to Eureka, get the servers on which give service is running
+    and distribute the load across the different instances of the service / servers.
+
+    Configuring Ribbon:
+        - Add ribbon dependency in your service's pom.xml file / in the parent pom.xml
+        - In our case, we will be adding all the services non-functional dependencies on the parent pom.As a result, a
+            service joining the team will also inherit the dependencies from the parent pom.
+            GROUP_ID:    org.springframework.cloud
+            ARTIFACT_ID: spring-cloud-starter-netflix-ribbon
+
+        - Add @RibbonClient("APPLICATION-ID OR SERVICE-NAME)" on the Interface that's annotated with the
+          @FeignClient("SERVICE-NAME / APPLICATION-ID)"
+
+
+
+
+
+Round-robin load balancing:
+    Round robin load balancing is a simple way to distribute client requests across a group of servers.
+    A client request is forwarded to each server in turn. The algorithm instructs the load balancer
+    to go back to the top of the list and repeats again.
+
+Zuul:
+    In simple word, we distribute our user requests in a Spring Cloud MicroServices ecosystem and the load balancing is
+     an important and common functionality . Zuul acts as a gateway for requests from websites, mobile devices to the
+     backend of your service.
+     Consequently, is ZUUL an API gateway?
+     Zuul acts as an API gateway or Edge service. It receives all the requests coming from the UI and then delegates the
+     requests to internal microservices. As the Edge service itself is a microservice, it can be independently scalable
+     and deployable, so we can perform some load testing, also.
+
+
+API Gateway VS Edge-service:
+    Technically, an API Gateway is the API exposed to the public (REST, etc.), and an Edge Service is a service running
+    on the API resolving the proxying, routing, etc. There could be many edge services on the Gateway. But practically
+    there is usually only one service, logic, on the Gateway thus API Gateway = Edge Service.
+
