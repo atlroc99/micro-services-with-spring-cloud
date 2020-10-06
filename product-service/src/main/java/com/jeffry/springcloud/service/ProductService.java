@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +19,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:bootstrap.properties")
 public class ProductService {
 
     private ProductRepository productRepository;

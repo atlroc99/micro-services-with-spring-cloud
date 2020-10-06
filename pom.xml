@@ -73,6 +73,13 @@
             <version>${spring-cloud.netfix.hystrix-version}</version>
         </dependency>
 
+        <!--config client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+
         <!--   <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-devtools</artifactId>
