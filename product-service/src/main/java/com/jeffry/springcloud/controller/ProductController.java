@@ -2,6 +2,7 @@ package com.jeffry.springcloud.controller;
 
 import com.jeffry.springcloud.service.ProductService;
 import com.jeffry.springcloud.entity.Product;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}")
-     public Product getProduct(@PathVariable(value = "id") Long id) {
+    public Product getProduct(@PathVariable(value = "id") Long id) {
         return productService.getProduct(id);
     }
 
@@ -37,8 +38,13 @@ public class ProductController {
         return productService.getProducts();
     }
 
-        @GetMapping("/testCoupon")
+    @GetMapping("/testCoupon")
+    @HystrixCommand(fallbackMethod = "sendErrorResponse")
     public String testCouponService() {
         return productService.testCouponService();
+    }
+
+    public String sendErrorResponse() {
+        return "MESSAGE: FALLBACK ON THIS METHOD...COUPON SERVICE IS DOWN";
     }
 }

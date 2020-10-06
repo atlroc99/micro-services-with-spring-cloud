@@ -32,7 +32,7 @@ public class ProductService {
     private String contextPath;
 
     @Autowired
-    public ProductService(ProductRepository productRepository, CouponClient couponClient){
+    public ProductService(ProductRepository productRepository, CouponClient couponClient) {
         this.productRepository = productRepository;
         this.couponClient = couponClient;
     }
@@ -44,17 +44,17 @@ public class ProductService {
 
     @Transactional
     public Product createProduct(Product product) {
-        log.info(">>> fetch coupon code: " + couponClient+ "/" + product.getCouponCode());
+        log.info(">>> fetch coupon code: " + couponClient + "/" + product.getCouponCode());
         Coupon coupon = couponClient.getCoupon(product.getCouponCode());
         product.setPrice(product.getPrice().subtract(coupon.getDiscount()));
-         return productRepository.save(product);
+        return productRepository.save(product);
     }
-    
+
     public Product getProduct(Long id) {
         return productRepository.findById(id).get();
     }
 
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return productRepository.findAll();
     }
 }
