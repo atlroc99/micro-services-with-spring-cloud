@@ -17,8 +17,10 @@
     <description>microservices with spring cloud features</description>
 
     <properties>
+        <spring-boot.maven.plugin.version>2.3.4.RELEASE</spring-boot.maven.plugin.version>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud.netfix.hystrix-version>2.2.5.RELEASE</spring-cloud.netfix.hystrix-version>
     </properties>
 
     <dependencies>
@@ -58,14 +60,26 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
+        <!-- Hystrix :Fault Tolerance-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>${spring-cloud.netfix.hystrix-version}</version>
+        </dependency>
+        <!-- Hystrix :Fault Tolerance Dashboard-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>${spring-cloud.netfix.hystrix-version}</version>
+        </dependency>
 
 
-     <!--   <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>-->
+        <!--   <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-devtools</artifactId>
+               <scope>runtime</scope>
+               <optional>true</optional>
+           </dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>
@@ -107,6 +121,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.maven.plugin.version}</version>
             </plugin>
         </plugins>
     </build>
