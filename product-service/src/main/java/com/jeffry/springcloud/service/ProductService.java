@@ -39,11 +39,7 @@ public class ProductService {
 
     public String testCouponService() {
         log.info(">>>>> Testing coupon service: " + contextPath + "/" + api + "/");
-        String val = "";
-        for(int i = 0; i < 4; i++) {
-            val = couponClient.testCouponService();
-        }
-        return val;
+        return couponClient.testCouponService();
     }
 
     @Transactional

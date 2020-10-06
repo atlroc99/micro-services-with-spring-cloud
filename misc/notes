@@ -39,3 +39,10 @@ API Gateway VS Edge-service:
     on the API resolving the proxying, routing, etc. There could be many edge services on the Gateway. But practically
     there is usually only one service, logic, on the Gateway thus API Gateway = Edge Service.
 
+
+
+
+ENABLING ZUUL PROXY:
+    CREATE A NEW ZUUL PROJECT: from the spring initializer.
+    Add the maven dependency -> go to maven pom.xml: hit CMD + N-> choose dependency
+

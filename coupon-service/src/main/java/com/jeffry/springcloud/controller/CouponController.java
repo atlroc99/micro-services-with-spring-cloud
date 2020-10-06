@@ -27,10 +27,10 @@ public class CouponController {
 
     @GetMapping()
     public String test() {
-        int SERVER_NO = 3;
         serverPort = environment.getProperty("server.port");
-        System.out.println(">>>> SERVER: " + SERVER_NO +" RUNNING ON port: " + serverPort);
-        return "COUPON-SERVICE: UP AND RUNNING...: SERVER: " + SERVER_NO + "  ON PORT: " + serverPort;
+        System.out.println(">>>> SERVER: RUNNING ON [ PORT NO: " + serverPort + " ]");
+        return "COUPON-SERVICE: UP AND RUNNING...[ON PORT: " + serverPort + "]";
+
     }
 
     @PostMapping("/coupons")
