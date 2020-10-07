@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/couponapi")
-@PropertySource("classpath:bootstrap.properties")
+//@PropertySource("classpath:bootstrap.properties")
 public class CouponController {
 
     private final CouponService couponService;
