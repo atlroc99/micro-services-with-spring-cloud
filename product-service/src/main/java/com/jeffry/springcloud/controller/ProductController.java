@@ -4,12 +4,14 @@ import com.jeffry.springcloud.service.ProductService;
 import com.jeffry.springcloud.entity.Product;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/productapi")
+@RefreshScope
 public class ProductController {
 
     private final ProductService productService;

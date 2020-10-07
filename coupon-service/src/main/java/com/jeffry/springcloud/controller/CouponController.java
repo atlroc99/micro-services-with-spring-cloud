@@ -2,6 +2,7 @@ package com.jeffry.springcloud.controller;
 
 import com.jeffry.springcloud.entity.Coupon;
 import com.jeffry.springcloud.service.CouponService;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/couponapi")
+@RefreshScope
 //@PropertySource("classpath:bootstrap.properties")
 public class CouponController {
 

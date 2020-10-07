@@ -66,6 +66,10 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
             <version>${spring-cloud.netfix.hystrix-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!-- Hystrix :Fault Tolerance Dashboard-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -78,8 +82,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <!--   <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-devtools</artifactId>
